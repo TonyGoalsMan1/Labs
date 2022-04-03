@@ -103,3 +103,27 @@ void popBack(vector* v)
 	v->size = v->size - 1;
 
 }
+int* atVector(vector* v, size_t index)
+{
+	if(index>=v->size)
+	{
+		cerr << "IndexError: a[" << index << "] is not exists";
+		exit(1);
+	}
+	else
+	{
+		return v->data + index;
+	}
+}
+int* back(vector* v)
+{
+	if(v->size == 0)
+	{
+		return 0;
+	}
+	return v->data + v->size - 1;
+}
+int* front(vector* v)
+{
+	return v->data;
+}
