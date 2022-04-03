@@ -7,6 +7,8 @@
 using namespace std;
 
 
+
+
 void assert(bool balayka)
 {
 	if (!balayka) {
@@ -44,11 +46,52 @@ void test_popBack_notEmptyVector()
 	assert(v.capacity == 1);
 	
 }
+
+void test_atVector_notEmptyVector()
+{
+	vector v = createVector(0);
+	pushBack(&v, 1);
+	pushBack(&v, 2);
+	int* second = atVector(&v, 1);
+	int value = *second;
+	assert(value == 2);
+}
+void test_atVector_requestToLastElement1()
+{
+	vector v = createVector(0);
+	pushBack(&v, 1);
+	pushBack(&v, 2);
+	int* second = atVector(&v, 1);
+	int value = *second;
+	assert(value == 2);
+}
+void testback()
+{
+	vector v = createVector(0);
+	pushBack(&v, 1);
+	pushBack(&v, 2);
+	int* second = back(&v);
+	int value = *second;
+	assert(value == 2);
+}
+void testfront()
+{
+	vector v = createVector(0);
+	pushBack(&v, 1);
+	pushBack(&v, 2);
+	int* second = front(&v);
+	int value = *second;
+	assert(value == 1);
+}
 void test() {
 	 test_pushBack_emptyVector();
 	 cout << endl;
 	 test_pushBack_fullVector();
 	 test_popBack_notEmptyVector();
+	 test_atVector_notEmptyVector();
+	 test_atVector_requestToLastElement1();
+	 testback();
+	 testfront();
 }
 
 void main()
